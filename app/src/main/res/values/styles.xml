@@ -8,4 +8,19 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <declare-styleable name="CircleProgressBar">
+        <attr name="reached_color" format="color"/>
+        <attr name="unreached_color" format="color"/>
+        <attr name="text_color" format="color"/>
+        <attr name="reached_stoke" format="dimension"/>
+        <attr name="unreached_stoke" format="dimension"/>
+        <attr name="circle_radius" format="dimension"/>
+        <attr name="text_visable" format="enum">
+            <enum name="visible" value="0"/>
+            <enum name="invisible" value="1"/>
+        </attr>
+        <attr name="circle_args" format="dimension"/>
+    </declare-styleable>
+
+
 </resources>

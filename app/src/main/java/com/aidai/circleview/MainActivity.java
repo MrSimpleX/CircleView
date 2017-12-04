@@ -7,10 +7,15 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.SeekBar;
 
+/**
+ * @author MrSimpleZ
+ */
 public class MainActivity extends AppCompatActivity {
 
 		private SeekBar mSeekBar;
 		private CircleProgressBar mCircleProgressBar;
+		private Button mBtnAnimStart;
+		private Button mBtnAnimStop;
 
 		@Override
 		protected void onCreate(Bundle savedInstanceState) {
@@ -18,10 +23,17 @@ public class MainActivity extends AppCompatActivity {
 				setContentView(R.layout.activity_main);
 				mSeekBar = findViewById(R.id.sb_contet);
 				mCircleProgressBar = findViewById(R.id.cpb_progress);
+				mBtnAnimStart = findViewById(R.id.btn_start);
+				mBtnAnimStop = findViewById(R.id.btn_end);
 				ObjectAnimator animator = ObjectAnimator.ofInt(mCircleProgressBar, "argle", 0, 360);
 				animator.setDuration(3000);
 				animator.setRepeatCount(-1);
-				animator.start();
+				mBtnAnimStart.setOnClickListener(v -> animator.start());
+				mBtnAnimStop.setOnClickListener(v -> {
+						animator.end();
+						mCircleProgressBar.setArgle(0);
+				});
+
 				mSeekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
 						@Override
 						public void onProgressChanged(SeekBar seekBar, int i, boolean b) {

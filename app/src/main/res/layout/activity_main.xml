@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:gravity="center_horizontal"
     tools:context="com.aidai.circleview.MainActivity"
     android:background="@color/colorAccent">
 
@@ -17,7 +18,28 @@
 
     <com.aidai.circleview.CircleProgressBar
         android:id="@+id/cpb_progress"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"/>
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/sb_contet"
+        android:layout_marginTop="20dp"
+        app:circle_radius="25dp"
+        android:layout_centerHorizontal="true"
+        app:unreached_stoke="1dp"
+        app:reached_stoke="1.5dp"/>
+
+    <Button
+        android:id="@+id/btn_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpb_progress"
+        android:text="启动动画"/>
+
+    <Button
+        android:id="@+id/btn_end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cpb_progress"
+        android:layout_toRightOf="@+id/btn_start"
+        android:text="关闭动画"/>
 
 </RelativeLayout>
